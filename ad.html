@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ad-style.css" />
+    <title>Yieldmo Ad</title>
+    <script>
+      /**
+       * This function is used as a callback which is called when a message is posted to the iframe.
+       * The function sets the caraousel's title, description, logo, and images from the data passed
+       * from the yieldmo.html.
+       * @param {*} event The message event object which has the details of the occurrsed event.
+       *
+       * **/
+      function receiveMessageCallback(event) {
+        const data = JSON.parse(event.data);
+        document.title = data.title;
+        document.getElementById("title-text").innerHTML = data.title;
+        document.getElementById("logo-image").src = data.logo;
+        document.getElementById("caraousel_image_1").src = data.image1.src;
+        document.getElementById("caraousel_image_link_1").href =
+          data.image1.url;
+        document.getElementById("caraousel_image_2").src = data.image2.src;
+        document.getElementById("caraousel_image_link_2").href =
+          data.image2.url;
+        document.getElementById("caraousel_image_3").src = data.image3.src;
+        document.getElementById("caraousel_image_link_3").href =
+          data.image3.url;
+        document.getElementById("caraousel_image_4").src = data.image4.src;
+        document.getElementById("caraousel_image_link_4").href =
+          data.image4.url;
+      }
+      window.addEventListener("message", receiveMessageCallback, false);
+    </script>
+
+    <script>
+      /**
+       * This script is responsible for sending the location of the mouse after every 250ms to the API provided.
+       *
+       **/
+      let currentX = 0;
+      let currentY = 0;
+      document.addEventListener("mousemove", (event) => {
+        currentX = event.clientX;
+        currentY = event.clientY;
+      });
+      setInterval(() => {
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            x: currentX,
+            y: currentY,
+          }),
+        });
+      }, 2000);
+    </script>
+
+    <script type="text/javascript">
+      /**
+       * This script is responsible to automatically naviaget the carousel image every 3 seconds.
+       * **/
+      let counter = 2;
+      let prevCounter = 1000;
+      let forward = true;
+      setInterval(() => {
+        if (prevCounter != 1000) {
+          document
+            .getElementById("radio" + prevCounter)
+            .removeAttribute("checked");
+        }
+        const el = document.getElementById("radio" + counter);
+        el.setAttribute("checked", true);
+        prevCounter = counter;
+        if (forward) {
+          counter += 1;
+        } else {
+          counter -= 1;
+        }
+        if (counter > 4) {
+          forward = false;
+          counter = 3;
+        } else if (counter < 1) {
+          forward = true;
+          counter = 2;
+        }
+      }, 3000);
+    </script>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="title-div">
+        <div class="title-logo">
+          <img id="logo-image" alt="" srcset="" />
+        </div>
+        <div id="title-text"></div>
+      </div>
+      <div class="slides">
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" />
+        <!-- The hyperlinks and images in the carousel are set dynamically 
+            which are recieved from the yieldmo.html -->
+        <div class="slide first">
+          <a href="" target="_blank" id="caraousel_image_link_1">
+            <img alt="" id="caraousel_image_1" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="" target="_blank" id="caraousel_image_link_2">
+            <img alt="" id="caraousel_image_2" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="" target="_blank" id="caraousel_image_link_3">
+            <img alt="" id="caraousel_image_3" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="" target="_blank" id="caraousel_image_link_4">
+            <img alt="" id="caraousel_image_4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

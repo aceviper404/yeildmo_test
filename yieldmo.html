@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="yieldmo-style.css" />
+    <link rel="icon" href="logo.png" />
+    <title>Yieldmo Test</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Lorem Ipsum Text</h3>
+      <div class="page-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Tristique nulla
+        aliquet enim tortor at auctor urna. Nisi vitae suscipit tellus mauris a
+        diam maecenas sed enim. Neque aliquam vestibulum morbi blandit cursus
+        risus at. Quam quisque id diam vel quam elementum pulvinar. Sagittis
+        orci a scelerisque purus semper. Suspendisse interdum consectetur libero
+        id faucibus nisl tincidunt. Faucibus in ornare quam viverra orci
+        sagittis eu volutpat odio. Elit pellentesque habitant morbi tristique.
+        Quam viverra orci sagittis eu volutpat odio facilisis. Pellentesque
+        dignissim enim sit amet venenatis. Lorem dolor sed viverra ipsum nunc
+        aliquet bibendum. Nec feugiat nisl pretium fusce id. Dui accumsan sit
+        amet nulla facilisi morbi tempus iaculis urna. Eu lobortis elementum
+        nibh tellus. Lobortis mattis aliquam faucibus purus in massa tempor nec
+        feugiat. Nisi quis eleifend quam adipiscing vitae. Egestas fringilla
+        phasellus faucibus scelerisque eleifend donec.
+      </div>
+      <div class="iframe-title-text"><h4>YOU MAY ALSO LIKE</h4></div>
+      <div class="iframe-container">
+        <iframe
+          src="ad.html"
+          id="ad-frame"
+          height="500px"
+          width="800px"
+        ></iframe>
+      </div>
+      <div class="page-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Tristique nulla
+        aliquet enim tortor at auctor urna. Nisi vitae suscipit tellus mauris a
+        diam maecenas sed enim. Neque aliquam vestibulum morbi blandit cursus
+        risus at. Quam quisque id diam vel quam elementum pulvinar. Sagittis
+        orci a scelerisque purus semper. Suspendisse interdum consectetur libero
+        id faucibus nisl tincidunt. Faucibus in ornare quam viverra orci
+        sagittis eu volutpat odio. Elit pellentesque habitant morbi tristique.
+        Quam viverra orci sagittis eu volutpat odio facilisis. Pellentesque
+        dignissim enim sit amet venenatis. Lorem dolor sed viverra ipsum nunc
+        aliquet bibendum. Nec feugiat nisl pretium fusce id. Dui accumsan sit
+        amet nulla facilisi morbi tempus iaculis urna. Eu lobortis elementum
+        nibh tellus. Lobortis mattis aliquam faucibus purus in massa tempor nec
+        feugiat. Nisi quis eleifend quam adipiscing vitae. Egestas fringilla
+        phasellus faucibus scelerisque eleifend donec. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Tristique nulla aliquet enim tortor at
+        auctor urna. Nisi vitae suscipit tellus mauris a diam maecenas sed enim.
+        Neque aliquam vestibulum morbi blandit cursus risus at. Quam quisque id
+        diam vel quam elementum pulvinar. Sagittis orci a scelerisque purus
+        semper. Suspendisse interdum consectetur libero id faucibus nisl
+        tincidunt. Faucibus in ornare quam viverra orci sagittis eu volutpat
+        odio. Elit pellentesque habitant morbi tristique. Quam viverra orci
+        sagittis eu volutpat odio facilisis. Pellentesque dignissim enim sit
+        amet venenatis. Lorem dolor sed viverra ipsum nunc aliquet bibendum. Nec
+        feugiat nisl pretium fusce id. Dui accumsan sit amet nulla facilisi
+        morbi tempus iaculis urna. Eu lobortis elementum nibh tellus. Lobortis
+        mattis aliquam faucibus purus in massa tempor nec feugiat. Nisi quis
+        eleifend quam adipiscing vitae. Egestas fringilla phasellus faucibus
+        scelerisque eleifend donec.
+      </div>
+    </div>
+    <script type="text/javascript">
+      window.addEventListener("load", () => {
+        const frame = window.document.getElementById("ad-frame");
+        frame.contentWindow.postMessage(
+          JSON.stringify({
+            title: "Yieldmo Advertisement",
+            description: "This carousel shows different images",
+            logo: "logo.png",
+            image1: {
+              url: "https://en.wikipedia.org/wiki/Yosemite_National_Park",
+              src: "scene_1.jpeg",
+            },
+            image2: {
+              url: "https://en.wikipedia.org/wiki/Yellowstone_National_Park",
+              src: "scene_2.jpeg",
+            },
+            image3: {
+              url: "https://en.wikipedia.org/wiki/Zion_National_Park",
+              src: "scene_3.jpeg",
+            },
+            image4: {
+              url: "https://en.wikipedia.org/wiki/Glacier_National_Park_(U.S.)",
+              src: "scene_4.jpeg",
+            },
+          }),
+          "*"
+        );
+      });
+    </script>
+    <script></script>
+  </body>
+</html>
