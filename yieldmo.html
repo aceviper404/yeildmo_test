@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="yieldmo-style.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="yieldmo.css" />
     <link rel="icon" href="images/logo.png" />
     <title>Yieldmo Test</title>
   </head>
   <body>
     <div class="container">
-      <h3>Lorem Ipsum Text</h3>
+      <h3>Sample Website</h3>
       <div class="page-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Tristique nulla
         aliquet enim tortor at auctor urna. Nisi vitae suscipit tellus mauris a
         diam maecenas sed enim. Neque aliquam vestibulum morbi blandit cursus
         risus at. Quam quisque id diam vel quam elementum pulvinar. Sagittis
-        orci a scelerisque purus semper. Suspendisse interdum consectetur libero
-        id faucibus nisl tincidunt. Faucibus in ornare quam viverra orci
-        sagittis eu volutpat odio. Elit pellentesque habitant morbi tristique.
-        Quam viverra orci sagittis eu volutpat odio facilisis. Pellentesque
-        dignissim enim sit amet venenatis. Lorem dolor sed viverra ipsum nunc
-        aliquet bibendum. Nec feugiat nisl pretium fusce id. Dui accumsan sit
-        amet nulla facilisi morbi tempus iaculis urna. Eu lobortis elementum
-        nibh tellus. Lobortis mattis aliquam faucibus purus in massa tempor nec
-        feugiat. Nisi quis eleifend quam adipiscing vitae. Egestas fringilla
-        phasellus faucibus scelerisque eleifend donec.
+        orci a scelerisque purus semper. 
       </div>
-      <div class="iframe-title-text"><h4>YOU MAY ALSO LIKE</h4></div>
+      <div class="iframe-title-text"><h4>Yieldmo Ads</h4></div>
       <div class="iframe-container">
         <iframe
           src="ad.html"
-          id="ad-frame"
-          height="500px"
-          width="800px"
+          id="ad_id"
+          height="320px"
+          width="480px"
         ></iframe>
       </div>
       <div class="page-text">
@@ -57,48 +48,39 @@
         labore et dolore magna aliqua. Tristique nulla aliquet enim tortor at
         auctor urna. Nisi vitae suscipit tellus mauris a diam maecenas sed enim.
         Neque aliquam vestibulum morbi blandit cursus risus at. Quam quisque id
-        diam vel quam elementum pulvinar. Sagittis orci a scelerisque purus
-        semper. Suspendisse interdum consectetur libero id faucibus nisl
-        tincidunt. Faucibus in ornare quam viverra orci sagittis eu volutpat
-        odio. Elit pellentesque habitant morbi tristique. Quam viverra orci
-        sagittis eu volutpat odio facilisis. Pellentesque dignissim enim sit
-        amet venenatis. Lorem dolor sed viverra ipsum nunc aliquet bibendum. Nec
-        feugiat nisl pretium fusce id. Dui accumsan sit amet nulla facilisi
-        morbi tempus iaculis urna. Eu lobortis elementum nibh tellus. Lobortis
-        mattis aliquam faucibus purus in massa tempor nec feugiat. Nisi quis
-        eleifend quam adipiscing vitae. Egestas fringilla phasellus faucibus
-        scelerisque eleifend donec.
+        diam vel quam elementum pulvinar. 
       </div>
     </div>
     <script type="text/javascript">
       window.addEventListener("load", () => {
-        const frame = window.document.getElementById("ad-frame");
+        const frame = window.document.getElementById("ad_id");
+        console.log(frame);
         frame.contentWindow.postMessage(
           JSON.stringify({
             title: "Yieldmo Advertisement",
-            description: "This carousel shows different images",
-            logo: "images/logo.png",
+            description: "Carousel implementation of yieldmo ads",
+            logo: "folder/logo.png",
             image1: {
-              url: "https://en.wikipedia.org/wiki/Yosemite_National_Park",
-              src: "images/scene_1.jpeg",
+              url: "https://www.docker.com/",
+              src: "folder/image1.jpeg",
             },
             image2: {
-              url: "https://en.wikipedia.org/wiki/Yellowstone_National_Park",
-              src: "images/scene_2.jpeg",
+              url: "https://docs.docker.com/get-started/",
+              src: "folder/image2.jpeg",
             },
             image3: {
-              url: "https://en.wikipedia.org/wiki/Zion_National_Park",
-              src: "images/scene_3.jpeg",
+              url: "https://www.docker.com/pricing/faq/",
+              src: "folder/image3.jpeg",
             },
             image4: {
-              url: "https://en.wikipedia.org/wiki/Glacier_National_Park_(U.S.)",
-              src: "images/scene_4.jpeg",
+              url: "https://www.docker.com/blog/",
+              src: "folder/image4.jpeg",
             },
           }),
           "*"
         );
       });
     </script>
-    <script></script>
+    <!-- <script></script> -->
   </body>
 </html>
