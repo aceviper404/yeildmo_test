@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.iframe-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.iframe-title-text{
+    display: flex;
+    justify-content: center;
+}

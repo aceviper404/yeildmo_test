@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ad.css" />
+    <title>Yieldmo Ad</title>
+    
+
+    <script>
+      let current_x = 0;
+      let current_y = 0;
+      document.addEventListener("mousemove", (event) => {
+        current_x = event.clientX;
+        current_y = event.clientY;
+      });
+      setInterval(() => {
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            x: current_x,
+            y: current_y,
+          }),
+        });
+      }, 2000);
+    </script>
+    
+
+    <script>
+
+      function receiveMessageCallback(event) {
+        const data = JSON.parse(event.data);
+        document.title = data.title;
+        document.getElementById("title-text").innerHTML = data.title;
+        document.getElementById("logo-image").src = data.logo;
+        document.getElementById("caraousel_image_1").src = data.image1.src;
+        document.getElementById("caraousel_image_link_1").href =
+          data.image1.url;
+        document.getElementById("caraousel_image_2").src = data.image2.src;
+        document.getElementById("caraousel_image_link_2").href =
+          data.image2.url;
+        document.getElementById("caraousel_image_3").src = data.image3.src;
+        document.getElementById("caraousel_image_link_3").href =
+          data.image3.url;
+        document.getElementById("caraousel_image_4").src = data.image4.src;
+        document.getElementById("caraousel_image_link_4").href =
+          data.image4.url;
+      }
+      window.addEventListener("message", receiveMessageCallback, false);
+    </script>
+
+
+    <script type="text/javascript">
+      let c = 2;
+      let n = 1000;
+      let forward = true;
+      setInterval(() => {
+        if (n != 1000) {
+          document
+            .getElementById("radio" + n)
+            .removeAttribute("checked");
+        }
+        const el = document.getElementById("radio" + c);
+        el.setAttribute("checked", true);
+        n = c;
+        if (forward) {
+          c += 1;
+        } else {
+          c -= 1;
+        }
+        if (c > 4) {
+          forward = false;
+          c = 3;
+        } else if (c < 1) {
+          forward = true;
+          c = 2;
+        }
+      }, 3000);
+    </script>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="title-div">
+        <div class="title-logo">
+          <img id="logo-image" alt="" srcset="" />
+        </div>
+        <div id="title-text"></div>
+      </div>
+      <div class="slides">
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" />
+
+        <div class="slide first">
+          <a href="" target="_blank" id="caraousel_image_link_1">
+            <img alt="" id="caraousel_image_1" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="" target="_blank" id="caraousel_image_link_2">
+            <img alt="" id="caraousel_image_2" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="" target="_blank" id="caraousel_image_link_3">
+            <img alt="" id="caraousel_image_3" />
+          </a>
+        </div>
+        <div class="slide">
+          <a href="" target="_blank" id="caraousel_image_link_4">
+            <img alt="" id="caraousel_image_4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
